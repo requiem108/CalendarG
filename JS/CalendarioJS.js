@@ -38,6 +38,7 @@ function AgregarEvento(event){
     let hora = document.getElementById('HoraSelect');
 
     let fecha = new Date();
+    fecha.setHours(0);
     let fechaComparar = new Date(fechaE.value);
     fechaComparar.setDate(fechaComparar.getDate()+1);
 
@@ -48,10 +49,17 @@ function AgregarEvento(event){
                 method: 'POST',
                 body: datos
             })
-            .then(res=>res.text())    
-            //Mostrar los resultados
-            .then(cortes=>{
-                document.getElementById('MyIframe').contentDocument.location.reload(true);
+            .then(res=>res.text())
+            .then(respuesta=>{
+                console.log(respuesta);
+                if(respuesta=='exito'){
+                    alert('Cita agregada correctamente');
+                    LimpiarFormularioPrincipal(formulario);
+                    document.getElementById('MyIframe').src+='';
+                }else{
+                    alert(respuesta);
+                }
+                //document.getElementById('MyIframe').contentDocument.location.reload(true);
             })
         }else{
             alert('Revisa tus opciones seleccionadas');
