@@ -11,29 +11,57 @@
 <body>
     <div class="ContendorBase">
         <div class="ContenedorFormularioC">
-                <form  method="POST" class="FormBasic formAgregarCita" id="formCrearEvento">
-                    <div class="contendorInput">
-                            <label for="">Asignar doctor</label>
-                            <select type="text" id="nombreSelect" name="NombreDoctor" required>
-                                <option value=0>Selecciona el doctor..</option>
-                                <option value=1>Omar</option>
-                                <option value=2>Ariadna</option>
-                            </select>                            
-                    </div>  
-                    <div class="contendorInput">
-                            <label for="">Fecha</label>
-                            <input type="date" name="FechaEvento" id="FechaEvento" class="inputFechas"required>                          
-                    </div> 
-                    <div class="contendorInput" >
-                            <label for="">Hora</label>
-                            <select type="text" name="HoraEvento" id="HoraSelect" required>
-                                <option value=0>Horario..</option>                                
-                            </select>                            
-                    </div>  
-                    <input type="submit">
-                                    
-                </form> 
-        </div>
+                <div class="contenedorModCita">
+                    <form  class="FormBasic formAgregarCita" id="formCrearEvento">
+                        <h3>Agendar cita</h3>
+                        <div class="contendorInput">
+                                <label for="">Asignar doctor</label>
+                                <select type="text" id="nombreSelect" name="NombreDoctor" required>
+                                    <option value=0>Selecciona el doctor..</option>
+                                    <option value=1>Omar</option>
+                                    <option value=2>Ariadna</option>
+                                </select>                            
+                        </div>  
+                        <div class="contendorInput">
+                                <label for="">Fecha</label>
+                                <input type="date" name="FechaEvento" id="FechaEvento" class="inputFechas"required>                          
+                        </div> 
+                        <div class="contendorInput" >
+                                <label for="">Hora</label>
+                                <select type="text" name="HoraEvento" id="HoraSelect" required>
+                                    <option value=0>Horario..</option>                                
+                                </select>                            
+                        </div>  
+                        <input type="submit" value="Guardar cita">
+                                        
+                    </form> 
+
+
+                
+                        <form  class="FormBasic formModificar" id="formModEvento">
+                                <h3>Modificar Cita</h3>                                
+                                <div class="contendorInput">
+                                        <label for="">Fecha inicio</label>
+                                        <input type="date" name="FechaI" id="FechaIni" class="inputFechas"required>                          
+                                </div> 
+                                <div class="contendorInput">
+                                        <label for="">Fecha FechaFinal</label>
+                                        <input type="date" name="FechaF" id="FechaFin" class="inputFechas"required>                          
+                                </div>
+                               
+                                <input type="submit" value="Buscar">
+                                                
+                            </form> 
+                </div>
+                
+                <div class="ContenedorTablaCita">
+                        <table class="tablaCitas" id="TablaEventosGCalendar">
+                    
+                            </table>
+                </div>
+            </div>
+                
+        
         <div class="ContenedorCalendario">
                 <iframe id="MyIframe" src="https://calendar.google.com/calendar/embed?src=qmjh2t4cnvg3j079gmfukmlq2k%40group.calendar.google.com&ctz=America%2FMexico_City" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
@@ -42,6 +70,7 @@
    <script src="JS/CalendarioJS.js"></script>
    <script src="JS/Formatos.js"></script>
    <script src="JS/LimpiarForm.js"></script>
+   <script src="JS/BuscarEventos.js"></script>
 
 </body>
 </html>

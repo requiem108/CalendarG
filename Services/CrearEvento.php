@@ -69,7 +69,7 @@ try{
     if($cont_events == 0){
 
         $event = new Google_Service_Calendar_Event();
-        $event->setSummary('Cita para el Doctor '.$NombreDoctor);
+        $event->setSummary('Cita para el Doctor '.$invitado);
         $event->setDescription('Revisión por parete del doctor');
         $event->setLocation('Sucursal Gto 1');
      
@@ -93,7 +93,7 @@ try{
         $events=$calendarService->events->listEvents($id_calendar,$optParams);
 
         
-        echo "exito".$events;
+        echo "exito";
     }else{
         
         echo 'Existe un evento ya agendado';
