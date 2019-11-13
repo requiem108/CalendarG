@@ -47,11 +47,11 @@ $id_calendar='qmjh2t4cnvg3j079gmfukmlq2k@group.calendar.google.com';
 
  }catch(Google_Service_Exception $gs){
      
-      $m = json_decode($gs->getMessage());
       
+      echo $gs->getMessage();
 
     }catch(Exception $e){
-        //$m = $e->getMessage();
-        $m = json_decode($e->getMessage());
+       
+       echo $e->getMessage();
     }
 ?>

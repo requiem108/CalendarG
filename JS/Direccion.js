@@ -1,0 +1,1 @@
+var direccionURL = 'http://localhost/GCalendario/Services/'

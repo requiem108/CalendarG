@@ -27,6 +27,7 @@ function CargarHorarios(){
     }
     renglon+='<option value="19:00">19:00</option>';
     document.getElementById('HoraSelect').innerHTML=renglon;
+    document.getElementById('ModHoraSelect').innerHTML=renglon;
 }
 
 function AgregarEvento(event){
@@ -45,7 +46,7 @@ function AgregarEvento(event){
     if(fecha<fechaComparar){
         if(nomDoct.value!=0 && hora.value!=0){
             var datos= new FormData(formulario);
-            fetch('http://localhost/GCalendario/Services/CrearEvento.php',{
+            fetch(direccionURL+'CrearEvento.php',{
                 method: 'POST',
                 body: datos
             })
@@ -56,6 +57,7 @@ function AgregarEvento(event){
                     alert('Cita agregada correctamente');
                     LimpiarFormularioPrincipal(formulario);
                     document.getElementById('MyIframe').src+='';
+                    document.getElementById('TablaEventosGCalendar').innerHTML='';
                 }else{
                     alert(respuesta);
                 }

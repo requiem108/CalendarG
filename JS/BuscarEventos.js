@@ -28,7 +28,7 @@ function RealizarBusquedaEventos(formulario){
     let form = formulario;
     var datos = new FormData(form);
 
-    fetch('http://localhost/GCalendario/Services/ConsultarEventos.php',{
+    fetch(direccionURL+'ConsultarEventos.php',{
                 method: 'POST',
                 body: datos
             })
@@ -49,7 +49,7 @@ function RealizarBusquedaEventos(formulario){
                         '<td>'+evento.summary+'</td>'+
                         '<td class ="FechaTabla"><div>'+fecha.substring(0,10)+'</div><div>'+fecha.substring(11,16)+'</div></td>'+
                         '<td>'+evento.status+'</td>'+
-                        '<td class="botones"><div class="eGCalendarCanc" onclick="CanecelarVento(\''+evento.id+'\')">Cancelar</div><div class="eGCalendarMod" onclick="ModificarVento(\''+evento.id+'\')">Modificar</div></td>'+
+                        '<td class="botones"><div class="eGCalendarCanc" onclick="CanecelarEvento(\''+evento.id+'\')">Cancelar</div><div class="eGCalendarMod" onclick="ModificarEvento(\''+evento.id+'\',\''+fecha.substring(0,10)+'\',\''+fecha.substring(11,16)+'\')">Modificar</div></td>'+
                         '</tr>';                    
                 }
                 document.getElementById('TablaEventosGCalendar').innerHTML=cadena;

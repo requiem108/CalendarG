@@ -55,7 +55,7 @@ try{
 
     $optParams = array(
         'orderBy' => 'startTime',
-        'maxResults' => 20,
+        'maxResults' => 10000,
         'singleEvents' => TRUE,
         'timeMin' => $time_start,
         'timeMax' => $time_end,
@@ -86,11 +86,11 @@ try{
 
       
         $createdEvent = $calendarService->events->insert($id_calendar, $event);
-        $id_event= $createdEvent->getId();
+       /* $id_event= $createdEvent->getId();
         $link_event= $createdEvent->gethtmlLink();
 
         //Return ID Event
-        $events=$calendarService->events->listEvents($id_calendar,$optParams);
+        $events=$calendarService->events->listEvents($id_calendar,$optParams);*/
 
         
         echo "exito";
