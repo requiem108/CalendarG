@@ -85,12 +85,7 @@ try{
         $event->setEnd($end);
 
       
-        $createdEvent = $calendarService->events->insert($id_calendar, $event);
-       /* $id_event= $createdEvent->getId();
-        $link_event= $createdEvent->gethtmlLink();
-
-        //Return ID Event
-        $events=$calendarService->events->listEvents($id_calendar,$optParams);*/
+        $createdEvent = $calendarService->events->insert($id_calendar, $event);      
 
         
         echo "exito";
