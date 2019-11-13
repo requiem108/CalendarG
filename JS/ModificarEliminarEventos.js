@@ -63,3 +63,37 @@ function Modificar(event){
     })
     
 }
+
+function CanecelarEvento (idEvento){
+
+let form = document.getElementById('formModEvento');
+
+Eliminar(idEvento)
+    .then(()=>{
+        RealizarBusquedaEventos(form);
+    })
+
+
+    function Eliminar(idEvento){
+        return new Promise((resolve,reject)=>{
+            if( confirm("Realmente desea eliminar el evento?")){
+                var datos= new FormData();
+                datos.append('idEvento',idEvento);
+            
+                fetch(direccionURL+'EliminarEvento.php',{
+                            method: 'POST',
+                            body: datos
+                        })
+                        .then(res=>res.text())
+                        .then(respuesta=>{
+                            alert(respuesta);        
+                            document.getElementById('MyIframe').src+='';
+                            resolve()
+                        })
+            }
+
+        })
+    }
+
+    
+}
